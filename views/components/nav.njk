@@ -4,7 +4,8 @@
             { id: "home", href: "/", label: "home" },
             { id: "rules", href: "/rules", label: "rules" },
             { id: "faq", href: "/faq", label: "faq" },
-            { id: "public", href: "/public", label: "public chest" }
+            { id: "public", href: "/public", label: "public chest" },
+            { id: "uploaded", href: "/uploaded", label: "your chest" }
         ] %}
         {% for index, link in links.entries() -%}
             <a {% if selected == link.id %}class="nav-active" {% endif %}href="{{ link.href }}">{{ link.label }}</a>{% if index != links.length - 1 %} | {% endif %}

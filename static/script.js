@@ -3,6 +3,20 @@ const dropzone = document.getElementById("dropzone");
 const fileInput = document.getElementById("fileInput");
 const result = document.getElementById("result");
 
+let maxBytes;
+
+async function fetchMaxBytes() { /* dude i love async await */
+  try {
+    const response = await fetch('/config');
+    const data = await response.json();
+    maxBytes = data.maxbytes;
+  } catch (err) {
+    console.error('Failed to fetch max file size:', err);
+  }
+}
+
+fetchMaxBytes();
+
 ["dragenter", "dragover"].forEach(evt => {
   dropzone.addEventListener(evt, e => {
     e.preventDefault();
@@ -48,8 +62,9 @@ form.addEventListener("submit", async e => {
   const btn = form.querySelector("button");
   btn.disabled = true;
   btn.textContent = "Uploading…";
-  if (fileInput.files[0].size >= 5368709120) {
+  if (fileInput.files[0].size >= maxBytes) {
     btn.textContent = "Too big!"; 
+    btn.disabled = false;
     return;
   }
 

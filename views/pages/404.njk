@@ -1,0 +1,16 @@
+{% extends "templates/base.njk" %}
+{% from "../components/nav.njk" import nav %}
+
+{% block head %}
+  <title>chest is lost!</title>
+  <meta property="og:title" content="chest is lost!" />
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <img src="/assets/oakchest.png" alt="chest" class="logo" />
+    <h1>404 - Page Not Found</h1>
+    <p>The thing you're trying to find doesn't exist. Maybe check the link?</p>
+    {{ nav("") }}
+  </div>
+{% endblock %}

@@ -2,6 +2,11 @@
 [server]
 port = 3000
 
+[configs] #edit your settings here :D
+maxbytes = 5368709120 # I need to be in bytes! If I'm not then I don't work correctly! Waaahhhhh!
+masterpass = false
+master_password = "dontevenimp"
+
 [[bans]]
 ip = "1.1.1.1"
 reason = "idiot"

@@ -2,17 +2,18 @@
 {% from "../components/nav.njk" import nav %}
 
 {% block head %}
-  <title>inside the public chest</title>
-  <meta property="og:title" content="inside the public chest" />
+  <title>inside your chest</title>
+  <meta property="og:title" content="inside your chest" />
 {% endblock %}
 
 {% block body %}
+  <div class="account-number">Account: {{ accountNumber }}</div>
   <div class="container">
-    <h1>Public Chest</h1>
-    <p class="welcome-text">Browse files that others have chosen to share publicly.</p>
+    <h1>Your Chest</h1>
+    <p>Here are all the files you've uploaded.</p>
 
     <div class="public-grid">
-      {% for file in publicUploads %}
+      {% for file in uploads %}
         <div class="file-card" onmouseenter="centerIfNoThumb(this)">
           <a class="file-link" href="/uploads/{{ file.filename }}" target="_blank" title="{{ file.original_filename }}">
             <img class="thumb" src="/uploads/{{ file.filename }}" alt="preview" onerror="this.style.display='none'; this.closest('.file-card').classList.add('no-thumb');" />
@@ -28,5 +29,5 @@
         </div>
       {% endfor %}
     </div>
-    {{ nav("public") }}
+    {{ nav("uploaded") }}
 {% endblock %}

@@ -9,8 +9,13 @@
 {% block body %}
   <div class="container">
     <img src="/assets/oakchest.png" alt="chest" class="logo" />
-    <p>Uploads up to 5GB are allowed (unless you're immune!)</p>
+    <p>Uploads up to {{ maxBytes | formatBytes }} are allowed (unless you're immune!)</p>
     <form id="uploadForm">
+      {% if requireMaster %}
+      <div style="margin-bottom:0.5rem; text-align:center">
+        <input type="password" id="masterpass" name="masterpass" placeholder="master password" />
+      </div>
+      {% endif %}
       <label id="dropzone">
         <input type="file" id="fileInput" name="file" />
         <div id="dropText">Drag files here or click to upload</div>
@@ -19,7 +24,12 @@
       <button style="width: 200px; height: 50px" class="serverButton" type="submit">Upload</button>
     </form>
     <div id="result"></div>
+    <form action="/account" method="post" class="account-form">
+      <label for="accountNumber">Use account number (shareable):</label>
+      <input id="accountNumber" name="accountNumber" placeholder="CHEST-XXXXXXXX-XXXXXX" />
+      <button type="submit">Use</button>
+    </form>
     {{ nav("home") }}
   </div>
-  <script src="/assets/script.js"></script>
+  <script type="module" src="/assets/script.js"></script>
 {% endblock %}
