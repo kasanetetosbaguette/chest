@@ -2,28 +2,17 @@
 {% from "../components/nav.njk" import nav %}
 
 {% block head %}
-  <title>oak chest | rules</title>
-  <meta property="og:title" content="oak chest | rules" />
+  <title>chest's rules</title>
+  <meta property="og:title" content="chest's rules" />
 {% endblock %}
 
 {% block body %}
   <div class="container">
     <h1>Rules</h1>
-    <ol>
-      <li>Any illegal things uploaded with malicious intent such as viruses, CP, etc are not allowed</li>
-      <li>No NSFW content is allowed</li>
-    </ol>
-    <p>I have the right to delete any of your files and even IP ban you if you violate these rules!!</p>
-    <h1>API</h1>
-    <p>
-      You can use the API to upload files.
-      <ul>
-        <li>Method: <strong>POST</strong></li>
-        <li>Parameters: <code>file=path/to/file.txt</code></li>
-        <li>URL: <strong>https://chest.oaktown.cc/upload</strong></li>
-        <li>Curl command: <code>curl -F "file=@path/to/file.txt" https://chest.oaktown.cc/upload</code></li>
-      </ul>
-    </p>
+    <p>1. No Viruses/Malware is allowed</li>
+    <p>2. No NSFW content is allowed</li>
+    <p>If you violate these rules I will IP ban you and purge your files.</p>
+    <p>It's not hard to listen!</p>
+    <div id="result"></div>
     {{ nav("rules") }}
-  </div>
 {% endblock %}

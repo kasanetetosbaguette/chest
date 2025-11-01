@@ -84,6 +84,10 @@ app.get("/rules", (req, res) => {
   res.render("pages/rules");
 });
 
+app.get("/faq", (req, res) => {
+  res.render("pages/faq");
+});
+
 app.get("/public", (req, res) => {
   const publicUploadsStmt = database.prepare(`
     SELECT *
@@ -112,7 +116,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
 
   const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
 
-  // kill your mouth
+  // bans are stored here
   const bans = config.bans || [];
   const ban = bans.find(ban => ip.replace("::ffff:", "") === ban.ip);
   if (ban) {

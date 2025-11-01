@@ -1,33 +1,21 @@
 @font-face {
-  font-family: "TF2";
-  src: url("/assets/fonts/TF2.woff") format("woff"),
-       url("/assets/fonts/TF2.woff2") format("woff2");
+  font-family: "Ubuntu";
+  src: url("/assets/fonts/Ubuntu.ttf"),
 }
 
-@font-face {
-  font-family: "TF2 Secondary";
-  src: url("/assets/fonts/TF2Secondary.woff") format("woff"),
-       url("/assets/fonts/TF2Secondary.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "TF2 Build";
-  src: url("/assets/fonts/TF2Build.woff") format("woff"),
-       url("/assets/fonts/TF2Build.woff2") format("woff2");
-}
 
 body {
-  font-family: "TF2 Secondary";
-  background-image: url("/assets/darkoak.png");
+  font-family: "Ubuntu";
+  background-image: url("/assets/background.webp");;
   display: flex;
   height: 100vh;
-  align-items: center;
+  align-items: top;
   justify-content: center;
-  margin: 0;
-  color: #fff;
+  margin: 2;
+  color: #000;
 }
 
-h1 {font-family: "TF2 Build";}
+h1 {font-family: "Ubuntu";}
 
 .logo {
   display: block;
@@ -37,11 +25,11 @@ h1 {font-family: "TF2 Build";}
   margin-right: auto;
 }
 
+/* big box that supports everything*/
 .container {
-  background-color: #333;
   border-radius: 10px;
   padding: 2rem;
-  width: 500px;
+  width: 600px;
 }
 
 nav {
@@ -51,36 +39,33 @@ nav {
 }
 
 a {
-  color: green;
+  color: cadetblue;
 }
 
 a:hover {
-  color: yellow;
+  color: lightblue;
 }
 
 a:active {
-  color: gold;
+  color: skyblue;
 }
 
 .nav-active {
   font-weight: bold;
-  font-style: italic;
 }
 
 #dropzone input[type="file"] {
   display: none;
 }
-
-#dropzone {
+/* file thingy*/
+#dropzone { 
   display: block;
-  background-color: #444;
-  border: 2px dashed #aaa;
-  border-radius: 8px;
-  padding: 2rem;
+  background-color: rgba(46, 96, 134, 0.75);
+  border: 3px dashed #173841;
+  border-radius: 16px;
+  padding: 3rem;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.2s, border-color 0.2s;
-  margin-bottom: 1rem;
 }
 
 #dropzone.dragover {
@@ -90,7 +75,7 @@ a:active {
 
 #dropText {
   font-size: 1rem;
-  color: #ccc;
+  color: #333;
   line-height: 1.5;
 }
 
@@ -106,17 +91,12 @@ a:active {
   margin-right: auto;
 
   border-radius: 50px;
-  background-image: linear-gradient(0deg, #612400, #9c5f3c);
-
-  box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%),
-              0 1px 3px 0 rgb(93 100 148 / 20%);
-
-  transition: all 0.2s ease-out;
+  background-color: #173841;
 
   justify-content: center;
   align-items: center;
 
-  font-family: "TF2";
+  font-family: "Ubuntu";
   font-size: large;
   font-weight: 600;
   color: #fff;
@@ -124,12 +104,6 @@ a:active {
 	text-decoration: none;
 
   user-select: none;
-}
-
-.serverButton:hover {
-  box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%),
-              0 4px 6px 0 rgb(93 100 148 / 20%);
-	text-shadow: 0px 0px 5px currentColor;
 }
 
 .serverButton:active {
@@ -150,7 +124,7 @@ td, th {
 }
 
 tr:nth-child(even), th {
-  background-color: #222;
+  background-color: #aabbff;
 }
 
 table {
@@ -166,5 +140,5 @@ p, li, h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  height: 50px;
 }

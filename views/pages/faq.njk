@@ -1,0 +1,21 @@
+{% extends "templates/base.njk" %}
+{% from "../components/nav.njk" import nav %}
+
+{% block head %}
+  <title>chest's faq</title>
+  <meta property="og:title" content="chest's faq" />
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    <h1>FAQ</h1>
+    <h1>What is Chest?</h1>
+    <p>Chest is a FOSS file sharing service akin to Catbox or Uguu.</p>
+    <h1>How long are files stored?</h1>
+    <p>Forever. If you want to remove a file, contact the admin.</p>
+    <h1>Source code?</h1>
+    <p>The source code for Chest is on GitHub.
+    <a href="https://github.com/kasanetetosbaguette/chest">Here it is!</a>
+    <div id="result"></div>
+    {{ nav("faq") }}
+{% endblock %}

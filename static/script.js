@@ -48,6 +48,10 @@ form.addEventListener("submit", async e => {
   const btn = form.querySelector("button");
   btn.disabled = true;
   btn.textContent = "Uploading…";
+  if (fileInput.files[0].size >= 5368709120) {
+    btn.textContent = "Too big!"; 
+    return;
+  }
 
   const formData = new FormData();
   formData.append("file", fileInput.files[0]);
@@ -87,7 +91,7 @@ form.addEventListener("submit", async e => {
   }
   finally {
     btn.disabled = false;
-    btn.textContent = "Upload";
+    btn.textContent = "Uploaded!";
     fileInput.value = "";
   }
 });
