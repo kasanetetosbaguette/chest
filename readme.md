@@ -1,32 +1,23 @@
-# <img src="https://github.com/oaktownmc/chest/blob/master/static/oakchest.png?raw=true" alt="oak chest" height="60" />
-a free file sharing service! source code for https://chest.oaktown.cc
-## self-hosting
-you will need nginx. here is the server config:
-```nginx
-server {
-    # ...
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-For $remote_addr;
-        proxy_cache_bypass $http_upgrade;
-
-        client_max_body_size 6G;
-    }
-
-    # ...
-}
-```
-to install the requirements, run:
-```shell
+a fork of oak chest, for personal use...
+## goals/roadmap
+- account type system (input password and view your uploads)
+- locked mode (need master password to upload files)
+- settings (ex upload size limit)
+probably more if i can think of it
+## why does this exist?
+oak chest was really the only catbox like open source webbased software i could think of (there's the og uguu though! but thats temporary)..
+my friend was talking about wanting to host a file service for his friends but some of the things he wanted aren't in oak chest by default so i decided to take the challenge and try to make some of it.
+i've not coded in js before so my code might be messy and not right... but i'm trying!
+## hosting and install
+you will need nodejs (nodejs comes with npm!)
+first rename config.toml.example to just config.toml and edit it however you wish it to be (more options will be added later)
+then run
+~~~
 npm install
-```
-to start the server, run:
-```shell
+~~~
+to install dependencies and finally you can run the server using
+~~~
 node server.js
-```
-the server will start and host at http://localhost:3000.
+~~~
+to host the server on localhost.. from there you can do all the web things :D
+
